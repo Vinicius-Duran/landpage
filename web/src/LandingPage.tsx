@@ -1,4 +1,4 @@
-import { FormEvent, type ReactNode, useState } from "react";
+import { useState, type FormEvent, type ReactNode } from "react";
 import {
   WHATSAPP_URL_FOOTER,
   WHATSAPP_URL_FORM,
