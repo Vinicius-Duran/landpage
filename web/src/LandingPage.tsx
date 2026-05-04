@@ -87,7 +87,7 @@ export default function LandingPage() {
     <>
       <nav>
         <a href="#" className="logo" aria-label="Meta&Marketing — Marketing Digital">
-          <img src="/logo-principal-colorida.png" alt="Meta&Marketing" />
+          <img src="/logo-principal-versao-2.png" alt="Meta&Marketing" />
         </a>
         <a href="#orcamento" className="nav-cta">
           Solicitar orçamento →
@@ -522,17 +522,17 @@ export default function LandingPage() {
 
       <footer>
         <div className="logo logo-footer" style={{ marginBottom: 14 }}>
-          <img src="/logo-2-branco.png" alt="Meta&Marketing" />
+          <img src="/logo-principal-versao-2.png" alt="Meta&Marketing" />
         </div>
-        <p>Marketing digital com visão de quem entende de e-commerce desde 2008.</p>
-        <p style={{ marginTop: 8 }}>
+        <p className="footer-tagline">Marketing digital com visão de quem entende de e-commerce desde 2008.</p>
+        <p className="footer-contact" style={{ marginTop: 8 }}>
           <a href="mailto:viviane@metaemarketing.com.br">viviane@metaemarketing.com.br</a>
-          &nbsp;·&nbsp;
+          <span className="footer-contact-sep">·</span>
           <a href={WHATSAPP_URL_FOOTER} target="_blank" rel="noopener noreferrer">
             (48) 98465-5704
           </a>
         </p>
-        <p style={{ marginTop: 18, opacity: 0.5, fontSize: 11 }}>
+        <p className="footer-legal" style={{ marginTop: 18, opacity: 0.5, fontSize: 11 }}>
           © Meta&Marketing · Marketing Digital desde 2008 · Certificação Google Shopping · Parceiros Edrone
         </p>
       </footer>
