@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site profissional que transforma visitantes em clientes | Meta&Marketing</title>
+<meta name="description" content="Criamos sites institucionais e landing pages que vendem. 17 anos de experiência em marketing digital. Solicite seu orçamento sem compromisso.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --orange: #F96233;
+  --amber: #F29B31;
+  --dark: #1a1a1a;
+  --gray-deep: #545454;
+  --gray-mid: #888;
+  --gray-soft: #e8e6e3;
+  --cream: #faf8f5;
+  --white: #ffffff;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Inter Tight', -apple-system, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--cream);
+  color: var(--dark);
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* === GRAIN OVERLAY === */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.4;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* === NAV === */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background: rgba(250, 248, 245, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.logo img {
+  height: 38px;
+  width: auto;
+  display: block;
+}
+.logo-footer img { height: 44px; }
+.nav-cta {
+  background: var(--dark);
+  color: var(--cream);
+  padding: 11px 22px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-cta:hover { background: var(--orange); transform: translateY(-1px); }
+
+/* === HERO === */
+.hero {
+  min-height: 100vh;
+  padding: 140px 40px 80px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -15%;
+  width: 60%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(249,98,51,0.18) 0%, transparent 60%);
+  filter: blur(40px);
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -10%;
+  width: 50%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(242,155,49,0.15) 0%, transparent 60%);
+  filter: blur(60px);
+}
+
+.hero-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gray-deep);
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: rise 0.8s ease 0.1s forwards;
+}
+.eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--orange);
+}
+
+h1.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(48px, 6.5vw, 92px);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  font-weight: 400;
+  margin-bottom: 32px;
+  color: var(--dark);
+}
+h1.hero-title .word {
+  display: inline-block;
+  opacity: 0;
+  animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+h1.hero-title em {
+  font-style: italic;
+  color: var(--orange);
+  font-weight: 300;
+}
+
+.hero-sub {
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--gray-deep);
+  max-width: 520px;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: rise 0.9s ease 0.6s forwards;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: rise 0.9s ease 0.75s forwards;
+}
+.btn-primary, .btn-secondary {
+  padding: 17px 32px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1.5px solid transparent;
+}
+.btn-primary {
+  background: var(--orange);
+  color: white;
+  box-shadow: 0 10px 30px -10px rgba(249,98,51,0.5);
+}
+.btn-primary:hover {
+  background: var(--dark);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px -10px rgba(0,0,0,0.4);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--dark);
+  border-color: var(--dark);
+}
+.btn-secondary:hover {
+  background: var(--dark);
+  color: var(--cream);
+}
+.btn-arrow {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+.btn-primary:hover .btn-arrow { transform: translateX(4px); }
+
+.hero-trust {
+  margin-top: 56px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  opacity: 0;
+  animation: rise 0.9s ease 0.9s forwards;
+}
+.trust-num {
+  font-family: var(--serif);
+  font-size: 44px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: var(--orange);
+  line-height: 1;
+}
+.trust-text {
+  font-size: 13px;
+  color: var(--gray-deep);
+  line-height: 1.4;
+  max-width: 200px;
+}
+
+/* === HERO VISUAL === */
+.hero-visual {
+  position: relative;
+  height: 480px;
+  opacity: 0;
+  animation: fade-in 1.2s ease 0.7s forwards;
+}
+.mockup-frame {
+  position: absolute;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow:
+    0 30px 60px -20px rgba(0,0,0,0.25),
+    0 18px 36px -18px rgba(249,98,51,0.2);
+  background: white;
+}
+.mockup-1 {
+  top: 20px;
+  right: 0;
+  width: 78%;
+  height: 360px;
+  transform: rotate(2deg);
+  z-index: 2;
+}
+.mockup-2 {
+  bottom: 0;
+  left: 0;
+  width: 55%;
+  height: 280px;
+  transform: rotate(-4deg);
+  z-index: 1;
+}
+.mockup-bar {
+  background: #f4f1ed;
+  padding: 9px 14px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.mockup-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ddd;
+}
+.mockup-dot:nth-child(1) { background: #ff5f57; }
+.mockup-dot:nth-child(2) { background: #febc2e; }
+.mockup-dot:nth-child(3) { background: #28c840; }
+.mockup-content {
+  padding: 28px;
+  height: calc(100% - 30px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.mockup-1 .mockup-content {
+  background: linear-gradient(135deg, #fff 0%, #faf6f0 100%);
+}
+.mockup-1-h {
+  font-family: var(--serif);
+  font-size: 28px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--dark);
+  font-weight: 500;
+}
+.mockup-1-h em { color: var(--orange); font-style: italic; font-weight: 400; }
+.mockup-1-sub {
+  font-size: 12px;
+  color: var(--gray-deep);
+  line-height: 1.5;
+  margin-top: 12px;
+}
+.mockup-1-btn {
+  background: var(--orange);
+  color: white;
+  padding: 9px 18px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 16px;
+  align-self: flex-start;
+}
+.mockup-1-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  margin-top: 18px;
+}
+.mockup-card {
+  background: white;
+  border: 1px solid #efe8de;
+  border-radius: 8px;
+  padding: 10px;
+  height: 56px;
+}
+.mockup-card-line {
+  height: 4px;
+  background: #e8e0d3;
+  border-radius: 2px;
+  margin-bottom: 4px;
+}
+.mockup-card-line:nth-child(2) { width: 70%; background: var(--orange); opacity: 0.6;}
+.mockup-card-line:nth-child(3) { width: 50%; }
+
+.mockup-2 .mockup-content {
+  background: var(--dark);
+  padding: 18px;
+}
+.mockup-2-h {
+  font-family: var(--serif);
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.mockup-2-h em { color: var(--amber); font-style: italic; }
+.mockup-2-stat {
+  font-family: var(--serif);
+  color: var(--amber);
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-top: 8px;
+}
+.mockup-2-cap {
+  font-size: 10px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  to { opacity: 1; }
+}
+
+/* === MARQUEE / LOGOS === */
+.marquee-section {
+  background: var(--dark);
+  color: var(--cream);
+  padding: 28px 0;
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.marquee {
+  display: flex;
+  gap: 70px;
+  animation: scroll 40s linear infinite;
+  white-space: nowrap;
+  align-items: center;
+}
+.marquee span {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 70px;
+}
+.marquee span::after {
+  content: '✦';
+  color: var(--orange);
+  font-size: 14px;
+}
+.marquee em { font-style: italic; color: var(--amber); }
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* === SECTION COMMON === */
+section.content {
+  padding: 130px 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.section-label {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-label::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--orange);
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+  margin-bottom: 30px;
+  max-width: 880px;
+}
+.section-title em { font-style: italic; color: var(--orange); font-weight: 300; }
+.section-intro {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--gray-deep);
+  max-width: 620px;
+  margin-bottom: 70px;
+}
+
+/* === PROBLEMS === */
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: var(--gray-soft);
+  border: 1px solid var(--gray-soft);
+}
+.problem {
+  background: var(--cream);
+  padding: 44px 38px;
+  position: relative;
+  transition: background 0.3s ease;
+}
+.problem:hover { background: white; }
+.problem-num {
+  font-family: var(--serif);
+  font-size: 14px;
+  color: var(--orange);
+  font-style: italic;
+  margin-bottom: 18px;
+}
+.problem h3 {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+.problem p {
+  color: var(--gray-deep);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* === SERVICES === */
+.services-section {
+  background: var(--dark);
+  color: var(--cream);
+  position: relative;
+  z-index: 2;
+}
+.services-inner {
+  padding: 130px 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.services-inner {
+  padding: 130px 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.services-section .section-title { color: var(--cream); }
+.services-section .section-intro { color: rgba(250,248,245,0.7); }
+.services-section .section-label { color: var(--amber); }
+.services-section .section-label::before { background: var(--amber); }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 30px;
+}
+.service-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 44px 38px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.service-card:hover {
+  background: rgba(249,98,51,0.05);
+  border-color: var(--orange);
+  transform: translateY(-4px);
+}
+.service-tag {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 100px;
+  background: rgba(255,155,49,0.12);
+  color: var(--amber);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+.service-card h3 {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  margin-bottom: 18px;
+  color: white;
+}
+.service-card h3 em { font-style: italic; color: var(--orange); font-weight: 300; }
+.service-desc {
+  color: rgba(255,255,255,0.7);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+.service-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+.service-list li {
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+  padding-left: 22px;
+  position: relative;
+  line-height: 1.5;
+}
+.service-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 9px;
+  height: 1px;
+  background: var(--orange);
+}
+
+/* === PROCESS === */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 30px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+.step {
+  padding: 44px 28px 44px 0;
+  border-right: 1px solid rgba(0,0,0,0.1);
+  position: relative;
+}
+.step:last-child { border-right: none; padding-right: 0; }
+.step:not(:first-child) { padding-left: 28px; }
+.step-num {
+  font-family: var(--serif);
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+.step h4 {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+.step p {
+  color: var(--gray-deep);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* === DIFFERENTIALS === */
+.diff-section {
+  background: var(--cream);
+  position: relative;
+}
+.diff-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: start;
+}
+.diff-stat-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.diff-stat {
+  border-top: 1px solid var(--dark);
+  padding-top: 18px;
+}
+.diff-stat-num {
+  font-family: var(--serif);
+  font-size: 72px;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: var(--dark);
+  font-style: italic;
+}
+.diff-stat-num em { color: var(--orange); font-style: italic; }
+.diff-stat-label {
+  font-size: 13px;
+  color: var(--gray-deep);
+  line-height: 1.4;
+  margin-top: 12px;
+  letter-spacing: 0.02em;
+}
+.diff-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.diff-item {
+  display: flex;
+  gap: 22px;
+  align-items: start;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.diff-item:last-child { border-bottom: none; }
+.diff-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--dark);
+  color: var(--orange);
+  display: grid;
+  place-items: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 19px;
+}
+.diff-item h5 {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  margin-bottom: 6px;
+}
+.diff-item p {
+  color: var(--gray-deep);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* === TESTIMONIAL === */
+.testimonial-section {
+  padding: 130px 40px;
+  background: linear-gradient(135deg, var(--dark) 0%, #2a2a2a 100%);
+  color: var(--cream);
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+.testimonial-section::before {
+  content: '';
+  position: absolute;
+  background-image: url('assets/logo-3-branco.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 520px;
+  height: 520px;
+  opacity: 0.05;
+  top: -60px;
+  left: -80px;
+  pointer-events: none;
+}
+.testimonial-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+blockquote.testimonial {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  margin-bottom: 40px;
+  color: white;
+}
+blockquote.testimonial em { color: var(--amber); font-style: italic; }
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.author-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: white;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  padding: 8px;
+}
+.author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.author-name {
+  font-weight: 500;
+  font-size: 16px;
+  color: white;
+}
+.author-role {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  margin-top: 2px;
+}
+
+/* === FAQ === */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(0,0,0,0.12);
+}
+.faq-item {
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+.faq-q {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 28px 0;
+  font-family: var(--serif);
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: var(--dark);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  transition: color 0.3s ease;
+}
+.faq-q:hover { color: var(--orange); }
+.faq-toggle {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--dark);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  font-weight: 300;
+  transition: all 0.3s ease;
+}
+.faq-item.open .faq-toggle {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: white;
+  transform: rotate(45deg);
+}
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.faq-a-inner {
+  padding: 0 0 30px 0;
+  color: var(--gray-deep);
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 760px;
+}
+.faq-item.open .faq-a { max-height: 320px; }
+
+/* === FINAL CTA === */
+.final-cta {
+  padding: 130px 40px;
+  position: relative;
+  z-index: 2;
+  background: var(--cream);
+}
+.final-cta-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  background: var(--dark);
+  border-radius: 28px;
+  padding: 90px 70px;
+  position: relative;
+  overflow: hidden;
+}
+.final-cta-inner::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(249,98,51,0.4) 0%, transparent 70%);
+  filter: blur(40px);
+}
+.final-cta-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+.final-cta h2 {
+  font-family: var(--serif);
+  font-size: clamp(40px, 5vw, 68px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 24px;
+}
+.final-cta h2 em { color: var(--orange); font-style: italic; font-weight: 300; }
+.final-cta p {
+  color: rgba(255,255,255,0.75);
+  font-size: 17px;
+  line-height: 1.55;
+  margin-bottom: 32px;
+  max-width: 480px;
+}
+
+/* === FORM === */
+.form-card {
+  background: white;
+  border-radius: 18px;
+  padding: 38px 34px;
+}
+.form-card-h {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+.form-card-sub {
+  font-size: 13px;
+  color: var(--gray-deep);
+  margin-bottom: 24px;
+}
+.form-group {
+  margin-bottom: 16px;
+}
+.form-group label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--gray-deep);
+  display: block;
+  margin-bottom: 6px;
+}
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--gray-soft);
+  border-radius: 10px;
+  font-family: var(--sans);
+  font-size: 15px;
+  background: var(--cream);
+  color: var(--dark);
+  transition: border-color 0.2s ease;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: none;
+  border-color: var(--orange);
+}
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: var(--sans);
+}
+.form-submit {
+  width: 100%;
+  background: var(--orange);
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 100px;
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.form-submit:hover {
+  background: var(--dark);
+  transform: translateY(-1px);
+}
+.form-divider {
+  text-align: center;
+  margin: 18px 0;
+  font-size: 12px;
+  color: var(--gray-mid);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  position: relative;
+}
+.form-divider::before, .form-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 35%;
+  height: 1px;
+  background: var(--gray-soft);
+}
+.form-divider::before { left: 0; }
+.form-divider::after { right: 0; }
+.form-whatsapp {
+  width: 100%;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  padding: 14px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+.form-whatsapp:hover {
+  background: #1ea952;
+  transform: translateY(-1px);
+}
+
+/* === FOOTER === */
+footer {
+  background: var(--dark);
+  color: rgba(255,255,255,0.6);
+  padding: 50px 40px 30px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+footer .logo { color: white; margin-bottom: 14px; display: inline-block; }
+footer p { font-size: 13px; line-height: 1.6; }
+footer a { color: var(--amber); text-decoration: none; }
+
+/* === RESPONSIVE === */
+@media (max-width: 980px) {
+  nav { padding: 14px 20px; }
+  .logo img { height: 30px; }
+  .hero { padding: 110px 20px 60px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 50px; }
+  .hero-visual { height: 360px; }
+  section.content { padding: 80px 20px; }
+  .services-inner { padding: 80px 20px; }
+  .services-inner { padding: 80px 20px; }
+  .problems-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; gap: 18px; }
+  .process-grid { grid-template-columns: 1fr 1fr; gap: 0; }
+  .step { border-right: none !important; border-bottom: 1px solid rgba(0,0,0,0.1); padding: 30px 0 !important; }
+  .step:nth-child(2) { border-right: 1px solid rgba(0,0,0,0.1) !important; padding-left: 0 !important; padding-right: 20px !important; }
+  .step:nth-child(odd) { padding-right: 20px !important; }
+  .step:nth-child(even) { padding-left: 20px !important; }
+  .step:nth-last-child(-n+2) { border-bottom: none; }
+  .diff-grid { grid-template-columns: 1fr; gap: 50px; }
+  .testimonial-section { padding: 80px 20px; }
+  .final-cta { padding: 80px 20px; }
+  .final-cta-inner { padding: 50px 30px; }
+  .final-cta-content { grid-template-columns: 1fr; gap: 40px; }
+  .hero-trust { flex-wrap: wrap; }
+  .trust-num { font-size: 36px; }
+  .nav-cta { padding: 9px 16px; font-size: 13px; }
+}
+
+@media (max-width: 580px) {
+  .process-grid { grid-template-columns: 1fr; }
+  .step { border-right: none !important; padding: 28px 0 !important; }
+  .diff-stat-block { grid-template-columns: 1fr 1fr; gap: 18px; }
+  .diff-stat-num { font-size: 56px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo" aria-label="Meta&Marketing — Marketing Digital">
+    <img src="assets/logo-principal-colorida.png" alt="Meta&Marketing">
+  </a>
+  <a href="#orcamento" class="nav-cta">Solicitar orçamento →</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Sites & Landing Pages que vendem</div>
+      <h1 class="hero-title">
+        <span class="word" style="animation-delay:.15s">Seu</span>
+        <span class="word" style="animation-delay:.22s">cliente</span>
+        <span class="word" style="animation-delay:.29s">está</span>
+        <span class="word" style="animation-delay:.36s">no</span>
+        <span class="word" style="animation-delay:.43s">Google</span>
+        <em><span class="word" style="animation-delay:.5s">agora</span></em>.<br>
+        <span class="word" style="animation-delay:.57s">A</span>
+        <span class="word" style="animation-delay:.64s">questão</span>
+        <span class="word" style="animation-delay:.71s">é:</span>
+        <span class="word" style="animation-delay:.78s">ele</span>
+        <span class="word" style="animation-delay:.85s">encontra</span>
+        <span class="word" style="animation-delay:.92s">você?</span>
+      </h1>
+      <p class="hero-sub">
+        Criamos sites institucionais e landing pages com design premium, performance de verdade e estrutura que transforma visitantes em clientes pagantes — não em visitas que desaparecem.
+      </p>
+      <div class="hero-ctas">
+        <a href="#orcamento" class="btn-primary">
+          Quero meu orçamento <span class="btn-arrow">→</span>
+        </a>
+        <a href="https://wa.me/5548984655704?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20cria%C3%A7%C3%A3o%20de%20site." class="btn-secondary" target="_blank" rel="noopener">
+          Falar no WhatsApp
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-num">17+</div>
+        <div class="trust-text">anos criando presença digital para empresas brasileiras</div>
+        <div class="trust-num">200+</div>
+        <div class="trust-text">projetos entregues com foco em conversão e vendas</div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <!-- Mockup principal -->
+      <div class="mockup-frame mockup-1">
+        <div class="mockup-bar">
+          <div class="mockup-dot"></div>
+          <div class="mockup-dot"></div>
+          <div class="mockup-dot"></div>
+        </div>
+        <div class="mockup-content">
+          <div>
+            <div class="mockup-1-h">Atendimento <em>de excelência</em>, agora online.</div>
+            <div class="mockup-1-sub">Conheça nossos serviços e marque uma consulta em minutos.</div>
+            <div class="mockup-1-btn">Agendar agora</div>
+          </div>
+          <div class="mockup-1-grid">
+            <div class="mockup-card"><div class="mockup-card-line"></div><div class="mockup-card-line"></div><div class="mockup-card-line"></div></div>
+            <div class="mockup-card"><div class="mockup-card-line"></div><div class="mockup-card-line"></div><div class="mockup-card-line"></div></div>
+            <div class="mockup-card"><div class="mockup-card-line"></div><div class="mockup-card-line"></div><div class="mockup-card-line"></div></div>
+          </div>
+        </div>
+      </div>
+      <!-- Mockup secundário -->
+      <div class="mockup-frame mockup-2">
+        <div class="mockup-bar">
+          <div class="mockup-dot"></div>
+          <div class="mockup-dot"></div>
+          <div class="mockup-dot"></div>
+        </div>
+        <div class="mockup-content">
+          <div class="mockup-2-h">Conversões <em>este mês</em></div>
+          <div class="mockup-2-stat">+312%</div>
+          <div class="mockup-2-cap">vs. mês anterior</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee-section">
+  <div class="marquee">
+    <span>Clínicas & consultórios</span>
+    <span>Escritórios <em>de advocacia</em></span>
+    <span>Lojas físicas</span>
+    <span>Imobiliárias</span>
+    <span>Estúdios <em>& studios</em></span>
+    <span>Pequenas indústrias</span>
+    <span>Prestadores de serviço</span>
+    <span>Comércio local</span>
+    <!-- repeat for seamless loop -->
+    <span>Clínicas & consultórios</span>
+    <span>Escritórios <em>de advocacia</em></span>
+    <span>Lojas físicas</span>
+    <span>Imobiliárias</span>
+    <span>Estúdios <em>& studios</em></span>
+    <span>Pequenas indústrias</span>
+    <span>Prestadores de serviço</span>
+    <span>Comércio local</span>
+  </div>
+</div>
+
+<!-- ============ PROBLEMS ============ -->
+<section class="content">
+  <div class="section-label">Diga-nos se isso soa familiar</div>
+  <h2 class="section-title">Você sabe que precisa de um site. Mas <em>algo sempre trava</em>.</h2>
+  <p class="section-intro">Negócio bom, atendimento excelente, fila de espera — e na hora de mostrar isso online? Um site amador, lento, ou simplesmente <strong>nenhum site</strong>. A gente entende. E resolve.</p>
+
+  <div class="problems-grid">
+    <div class="problem">
+      <div class="problem-num">— 01</div>
+      <h3>Seu cliente pesquisa e não encontra você</h3>
+      <p>Enquanto isso, encontra o concorrente — que talvez nem seja melhor que você, mas tem um site decente.</p>
+    </div>
+    <div class="problem">
+      <div class="problem-num">— 02</div>
+      <h3>Site velho, lento, que constrange</h3>
+      <p>Você evita compartilhar o link. Sabe que precisa atualizar há anos. Mas mexer parece complicado e caro.</p>
+    </div>
+    <div class="problem">
+      <div class="problem-num">— 03</div>
+      <h3>Investe em anúncio e o resultado some</h3>
+      <p>Visita entra, dá uma olhada e vai embora. Sem ligar, sem mandar mensagem, sem deixar contato.</p>
+    </div>
+    <div class="problem">
+      <div class="problem-num">— 04</div>
+      <h3>Tentou fazer sozinho e empacou</h3>
+      <p>Plataformas "fáceis" que prometem milagre, mas no fim sobra uma página sem cara de profissional.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services-section">
+  <div class="services-inner">
+    <div class="section-label">Como podemos ajudar</div>
+    <h2 class="section-title">Dois caminhos. Um <em>resultado</em>.</h2>
+    <p class="section-intro">Cada projeto é construído do zero para o seu negócio — não usamos templates prontos engessados. Tudo pensado para o cliente certo encontrar você e tomar a próxima ação.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-tag">Para autoridade & credibilidade</span>
+        <h3>Site <em>institucional</em></h3>
+        <p class="service-desc">A vitrine digital do seu negócio. Quem você é, o que oferece e por que escolher você — apresentado com a sofisticação que sua marca merece.</p>
+        <ul class="service-list">
+          <li>Design exclusivo, alinhado à identidade da sua marca</li>
+          <li>Estrutura de SEO técnico para você ser encontrado no Google</li>
+          <li>Páginas de serviços, sobre, blog e contato</li>
+          <li>Integração com WhatsApp e Google Business</li>
+          <li>Site rápido, responsivo e otimizado para mobile</li>
+          <li>Manutenção e suporte mensal opcional</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <span class="service-tag">Para campanhas de tráfego pago</span>
+        <h3>Landing <em>page</em> de conversão</h3>
+        <p class="service-desc">Página única, focada em uma única ação: gerar lead, agendar consulta, fechar orçamento. Cada elemento existe para empurrar o visitante ao próximo passo.</p>
+        <ul class="service-list">
+          <li>Copywriting persuasivo escrito para o seu público</li>
+          <li>Estrutura testada de funil (dor → solução → prova → CTA)</li>
+          <li>Integração com Google Ads e Meta Ads (pixel + conversão)</li>
+          <li>Formulário inteligente + botão WhatsApp</li>
+          <li>Testes A/B configuráveis para otimizar resultado</li>
+          <li>Velocidade de carregamento abaixo de 2 segundos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="content">
+  <div class="section-label">Como funciona</div>
+  <h2 class="section-title">Do briefing ao no ar, em <em>4 passos claros</em>.</h2>
+  <p class="section-intro">Sem mistério, sem promessa vazia. Você sabe exatamente o que está acontecendo em cada etapa — e o prazo é cumprido.</p>
+
+  <div class="process-grid">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h4>Briefing estratégico</h4>
+      <p>Conversa para entender seu negócio, seu cliente ideal e o que você quer alcançar. Sem questionário robótico.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h4>Design & estrutura</h4>
+      <p>Apresentamos o conceito visual, estrutura de páginas e copy. Você aprova antes de qualquer linha de código.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h4>Desenvolvimento</h4>
+      <p>Construção técnica com SEO embutido, performance otimizada e integrações com suas ferramentas.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <h4>Lançamento & suporte</h4>
+      <p>Site no ar, pixels configurados, métricas validadas. E suporte continuado para alterações e otimizações.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIFFERENTIALS ============ -->
+<section class="diff-section content">
+  <div class="diff-grid">
+    <div>
+      <div class="section-label">Por que Meta&Marketing</div>
+      <h2 class="section-title">Não somos uma fábrica de sites. <em>Somos parceiros de crescimento</em>.</h2>
+      <p class="section-intro" style="margin-bottom:50px">A diferença está em quem está do outro lado: marketing digital de verdade, com cabeça de quem vive de tráfego pago e conversão há quase duas décadas.</p>
+
+      <div class="diff-stat-block">
+        <div class="diff-stat">
+          <div class="diff-stat-num"><em>17+</em></div>
+          <div class="diff-stat-label">anos de experiência em marketing digital</div>
+        </div>
+        <div class="diff-stat">
+          <div class="diff-stat-num">200<em>+</em></div>
+          <div class="diff-stat-label">projetos entregues com excelência</div>
+        </div>
+        <div class="diff-stat">
+          <div class="diff-stat-num"><em>★</em></div>
+          <div class="diff-stat-label">Certificação oficial Google Shopping</div>
+        </div>
+        <div class="diff-stat">
+          <div class="diff-stat-num">●</div>
+          <div class="diff-stat-label">Parceiros oficiais Edrone CRM</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <ul class="diff-list">
+        <li class="diff-item">
+          <div class="diff-icon">a</div>
+          <div>
+            <h5>Site pensado para gerar negócio, não troféu</h5>
+            <p>Cada elemento — do título ao botão — é posicionado com a lógica de quem vive de campanha paga. Bonito é consequência, não objetivo.</p>
+          </div>
+        </li>
+        <li class="diff-item">
+          <div class="diff-icon">b</div>
+          <div>
+            <h5>SEO técnico desde a fundação</h5>
+            <p>Velocidade, estrutura, schema, meta tags, mobile-first. Seu site nasce pronto para o Google encontrar e ranquear.</p>
+          </div>
+        </li>
+        <li class="diff-item">
+          <div class="diff-icon">c</div>
+          <div>
+            <h5>Integração nativa com seus anúncios</h5>
+            <p>Pixel da Meta, tag do Google, conversões configuradas. Seu Ads não roda no escuro.</p>
+          </div>
+        </li>
+        <li class="diff-item">
+          <div class="diff-icon">d</div>
+          <div>
+            <h5>Atendimento direto com quem decide</h5>
+            <p>Você fala com sócios, não com call center. Decisão rápida, ajuste rápido, projeto sem ruído.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIAL ============ -->
+<section class="testimonial-section">
+  <div class="testimonial-inner">
+    <blockquote class="testimonial">
+      A Meta&Marketing entregou um site que <em>realmente trabalha pela gente</em>. Triplicamos os contatos qualificados em três meses, e a estrutura ficou tão sólida que conseguimos rodar Google Ads com confiança desde o primeiro dia.
+    </blockquote>
+    <div class="testimonial-author">
+      <div class="author-avatar"><img src="assets/logo-3-colorido-versao-2.png" alt="Meta&Marketing"></div>
+      <div>
+        <div class="author-name">Cliente Meta&Marketing</div>
+        <div class="author-role">Pequeno negócio local · Sul do Brasil</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="content">
+  <div class="section-label">Perguntas frequentes</div>
+  <h2 class="section-title">Vamos tirar suas <em>dúvidas honestas</em>.</h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">Quanto tempo leva para ficar pronto?<span class="faq-toggle">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Landing pages saem em 7 a 15 dias úteis. Sites institucionais variam de 25 a 45 dias úteis, dependendo do volume de páginas e do conteúdo. O prazo é definido no briefing e cumprido — sem surpresa.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Quanto custa? Por que não tem preço aqui?<span class="faq-toggle">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Cada projeto é único — depende do número de páginas, integrações, copy, e estratégia. Em vez de um "pacote pronto" que pode não servir para você, fazemos uma proposta personalizada. O orçamento sai em até 48h após o briefing inicial, sem custo e sem compromisso.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Eu já tenho domínio e hospedagem. Vocês usam?<span class="faq-toggle">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Sim, podemos usar seus serviços atuais ou indicar opções confiáveis. Cuidamos de toda a parte técnica de migração e configuração de DNS — você não precisa se preocupar com nada disso.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">E depois que o site está no ar? Tem manutenção?<span class="faq-toggle">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Oferecemos planos de manutenção mensal opcionais que incluem alterações de conteúdo, ajustes visuais, otimizações de SEO e conversão, monitoramento de performance e atualizações técnicas. Também atendemos demandas pontuais (alteração avulsa) quando preferir. O código do site é seu — você não fica refém de nada.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Vocês fazem tráfego pago também?<span class="faq-toggle">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Sim — gestão de Google Ads e Meta Ads é nosso core há 17 anos. É comum clientes começarem com o site e contratarem a gestão de mídia depois. A vantagem: a estrutura do site já nasce 100% preparada para campanha paga.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Como funcionam as alterações no site depois de pronto?<span class="faq-toggle">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Nossos sites são desenvolvidos com programação dedicada (HTML/React) — o que garante performance, segurança e SEO muito superiores a sites feitos em construtores genéricos. As alterações são feitas pela nossa equipe via planos de manutenção mensal ou solicitações pontuais, com prazo combinado e sem complicação. Você foca no seu negócio, a gente cuida do site.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA + FORM ============ -->
+<section class="final-cta" id="orcamento">
+  <div class="final-cta-inner">
+    <div class="final-cta-content">
+      <div>
+        <h2>Pronto para um site que <em>trabalha por você</em>?</h2>
+        <p>Conta o que você precisa. Em até 48h enviamos uma proposta personalizada — sem pressão, sem letra miúda. Se fizer sentido pra você, a gente toca o projeto. Se não fizer, ficamos amigos.</p>
+        <p style="color: var(--amber); font-size: 14px; letter-spacing: 0.05em; margin-bottom: 0;">→ Resposta em até 48h úteis</p>
+      </div>
+
+      <div class="form-card">
+        <h3 class="form-card-h">Solicite seu orçamento</h3>
+        <p class="form-card-sub">Sem compromisso. Resposta em 48h.</p>
+
+        <form id="lead-form">
+          <div class="form-group">
+            <label for="nome">Seu nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Como você se chama?" required>
+          </div>
+          <div class="form-group">
+            <label for="whatsapp">WhatsApp</label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" required>
+          </div>
+          <div class="form-group">
+            <label for="tipo">O que você precisa?</label>
+            <select id="tipo" name="tipo" required>
+              <option value="">Selecione...</option>
+              <option>Site institucional</option>
+              <option>Landing page para anúncios</option>
+              <option>Os dois</option>
+              <option>Ainda não sei, quero conversar</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="negocio">Qual seu tipo de negócio?</label>
+            <input type="text" id="negocio" name="negocio" placeholder="Ex: clínica, escritório, loja..." required>
+          </div>
+          <button type="submit" class="form-submit">
+            Receber proposta <span>→</span>
+          </button>
+        </form>
+
+        <div class="form-divider">ou</div>
+
+        <a href="https://wa.me/5548984655704?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20de%20site." class="form-whatsapp" target="_blank" rel="noopener">
+          Falar agora pelo WhatsApp →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="logo logo-footer" style="margin-bottom: 14px;">
+    <img src="assets/logo-2-branco.png" alt="Meta&Marketing">
+  </div>
+  <p>Marketing digital com visão de quem entende de e-commerce desde 2008.</p>
+  <p style="margin-top:8px">
+    <a href="mailto:viviane@metaemarketing.com.br">viviane@metaemarketing.com.br</a>
+    &nbsp;·&nbsp;
+    <a href="https://wa.me/5548984655704">(48) 98465-5704</a>
+  </p>
+  <p style="margin-top:18px; opacity:0.5; font-size:11px;">© Meta&Marketing · Marketing Digital desde 2008 · Certificação Google Shopping · Parceiros Edrone</p>
+</footer>
+
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// Form handler (placeholder — substituir pelo serviço de e-mail/CRM real)
+document.getElementById('lead-form').addEventListener('submit', e => {
+  e.preventDefault();
+  const nome = document.getElementById('nome').value;
+  const tipo = document.getElementById('tipo').value;
+  const negocio = document.getElementById('negocio').value;
+  const whats = document.getElementById('whatsapp').value;
+  const msg = `Olá! Sou ${nome}, do segmento ${negocio}. Solicitei um orçamento pelo site (${tipo}). Meu WhatsApp: ${whats}.`;
+  window.open(`https://wa.me/5548984655704?text=${encodeURIComponent(msg)}`, '_blank');
+});
+
+// Phone mask
+document.getElementById('whatsapp').addEventListener('input', e => {
+  let v = e.target.value.replace(/\D/g,'');
+  if (v.length > 11) v = v.slice(0,11);
+  if (v.length > 10) v = v.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+  else if (v.length > 6) v = v.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+  else if (v.length > 2) v = v.replace(/(\d{2})(\d{0,5})/, '($1) $2');
+  e.target.value = v;
+});
+</script>
+
+</body>
+</html>
