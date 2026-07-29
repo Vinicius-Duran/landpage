@@ -19,6 +19,17 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);backdro
 .menu a{font-weight:600;font-size:16px;color:var(--muted)}
 .menu a:hover{color:var(--ink)}
 
+/* Dropdown Serviços */
+.svc-drop{position:relative;display:flex;align-items:center}
+.svc-drop-label{font-weight:600;font-size:16px;color:var(--muted);cursor:default;user-select:none;display:flex;align-items:center;gap:5px}
+.svc-drop-label::after{content:"▾";font-size:12px;margin-top:1px}
+.svc-drop:hover .svc-drop-label{color:var(--ink)}
+.drop-panel{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px;min-width:230px;display:none;flex-direction:column;gap:2px;box-shadow:0 12px 36px -8px rgba(25,21,18,.16)}
+.drop-panel::before{content:"";position:absolute;top:-12px;left:0;right:0;height:12px}
+.svc-drop:hover .drop-panel{display:flex}
+.drop-panel a{font-weight:600;font-size:15px;color:var(--muted);padding:10px 14px;border-radius:9px;white-space:nowrap}
+.drop-panel a:hover{color:var(--ink);background:var(--bg2)}
+
 /* Botões */
 .btn{display:inline-flex;align-items:center;gap:9px;background:var(--orange);color:#fff;font-weight:700;font-size:16px;padding:13px 22px;border-radius:11px;transition:.15s;box-shadow:0 8px 20px -10px rgba(249,98,50,.6)}
 .btn:hover{background:#ef5526;transform:translateY(-1px)}
