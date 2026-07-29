@@ -68,10 +68,27 @@ footer .brand b{font-size:19px}
 .fl a:hover{color:var(--ink)}
 .cop{font-size:14px;color:var(--dim);width:100%;border-top:1px solid var(--line);padding-top:22px;margin-top:6px}
 
+/* Hamburger */
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px}
+.hamburger span{display:block;height:2px;background:var(--ink);border-radius:2px;transition:.22s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Mobile menu */
+.mobile-menu{display:flex;flex-direction:column;gap:4px;padding:16px 24px 24px;border-top:1px solid var(--line);background:rgba(255,255,255,.97);backdrop-filter:blur(14px)}
+.mobile-menu a{font-weight:600;font-size:17px;color:var(--muted);padding:11px 0;border-bottom:1px solid var(--line)}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a:hover{color:var(--ink)}
+.mobile-menu .btn{margin-top:8px;justify-content:center;border-bottom:none}
+.mob-svc-label{font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);padding:14px 0 6px}
+.mob-svc-item{padding-left:14px!important;font-size:16px!important;color:var(--muted)!important}
+
 @media(max-width:900px){
  h1{font-size:44px}
  h2{font-size:34px}
  .menu{display:none}
+ .hamburger{display:flex}
  .wrap{padding:0 24px}
  .darkfinal h2{font-size:28px}
 }

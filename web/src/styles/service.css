@@ -4,7 +4,7 @@
 .shero{position:relative;background-size:cover;background-position:center;color:#fff}
 .sheroin{position:relative;display:flex;align-items:center;padding:60px 40px 66px}
 .shero .hcopy{max-width:660px}
-.shero .back{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;color:rgba(255,255,255,.6);margin-bottom:20px}
+.shero .back{display:block;width:fit-content;font-weight:600;font-size:14px;color:rgba(255,255,255,.6);margin-bottom:20px}
 .shero .back:hover{color:#fff}
 .shero .ey{color:#ffd9c4;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.26)}
 .shero h1{color:#fff;font-size:47px;line-height:1.09;letter-spacing:-.02em;max-width:620px}
