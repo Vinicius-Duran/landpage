@@ -1,0 +1,32 @@
+/* Estilos exclusivos da página Sobre. */
+
+.ahero{padding:56px 0 30px}
+.aheroin{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.ahero h1{font-size:52px;line-height:1.05;margin:18px 0 20px;color:var(--ink)}
+.ahero .intro{font-size:19.5px;color:var(--muted);line-height:1.6;max-width:560px}
+.acred{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:26px}
+.acred .gb{width:66px;height:66px;background:#fff;border-radius:50%;box-shadow:var(--sh);display:block}
+.aphoto{aspect-ratio:4/5;border-radius:22px;background-size:cover;background-position:center;box-shadow:var(--sh);border:1px solid var(--line)}
+.acta{margin-top:30px}
+
+/* Trajetória */
+.story{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.story p{font-size:19px;color:var(--muted);line-height:1.7;max-width:820px;margin-bottom:20px}
+.story p b{color:var(--ink)}
+.astats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.astat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px 28px;box-shadow:var(--sh)}
+.astat .big{font-weight:900;font-size:40px;color:var(--orange);letter-spacing:-.02em;line-height:1}
+.astat .lb{margin-top:12px;font-size:16px;color:var(--muted);font-weight:500;line-height:1.4}
+
+/* Formação & certificações */
+.certgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.cert{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 22px;box-shadow:var(--sh)}
+.cert .yr{display:inline-block;font-size:12px;font-weight:800;color:#fff;background:var(--orange);padding:3px 9px;border-radius:6px;margin-bottom:12px;letter-spacing:.02em}
+.cert b{display:block;font-size:16px;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:4px}
+.cert span{font-size:14px;color:var(--dim)}
+
+@media(max-width:900px){
+ .aheroin{grid-template-columns:1fr;gap:34px}
+ .ahero h1{font-size:38px}
+ .astats,.certgrid{grid-template-columns:1fr}
+}

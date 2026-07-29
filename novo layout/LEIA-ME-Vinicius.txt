@@ -1,0 +1,32 @@
+SITE META&MARKETING — ARQUIVOS PARA PUBLICAÇÃO
+================================================
+
+CONTEÚDO (7 páginas HTML):
+- index.html ................ Página inicial (HOME)
+- sobre.html ................ Sobre / A Viviane
+- servico-trafego-pago.html . Serviço: Tráfego pago
+- servico-email-marketing.html  Serviço: E-mail marketing
+- servico-loja-virtual.html . Serviço: Loja virtual & sites
+- servico-seo.html .......... Serviço: SEO & otimização
+- servico-midia-social.html . Serviço: Mídia social
+
+COMO PUBLICAR:
+1. Suba TODOS os arquivos na MESMA pasta (raiz do domínio).
+2. index.html deve ser a página inicial (home).
+3. Mantenha os nomes dos arquivos — os links internos apontam por nome
+   (relativos, mesmo diretório). Se renomear, os links quebram.
+
+IMPORTANTE:
+- São arquivos ESTÁTICOS e self-contained: imagens, ícones e CSS já estão
+  embutidos no próprio HTML (base64). NÃO há pasta separada de imagens/css.
+- Fonte: Google Fonts (Inter), carregada via internet (padrão).
+- Rastreamento JÁ INCLUÍDO em todas as páginas:
+    * Google Analytics 4: G-CSF3CVQ758
+    * Meta Pixel: 270755987163416
+- SEO já aplicado: title, meta description, canonical, Open Graph,
+  dados estruturados (schema.org), tag <main>, robots e alt/lazy nas imagens.
+  OBS: os links canonical usam https://metaemarketing.com.br/ — se o domínio
+  final for outro, é só ajustar.
+- Botões de WhatsApp: 48 98465-5704.
+
+Dúvidas: viviane@metaemarketing.com.br

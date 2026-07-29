@@ -1,0 +1,35 @@
+/* Estilos compartilhados pelas 5 páginas de serviço. */
+
+/* Hero — a imagem/gradiente de cada serviço vem inline (ver data/servicePages.tsx) */
+.shero{position:relative;background-size:cover;background-position:center;color:#fff}
+.sheroin{position:relative;display:flex;align-items:center;padding:60px 40px 66px}
+.shero .hcopy{max-width:660px}
+.shero .back{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;color:rgba(255,255,255,.6);margin-bottom:20px}
+.shero .back:hover{color:#fff}
+.shero .ey{color:#ffd9c4;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.26)}
+.shero h1{color:#fff;font-size:47px;line-height:1.09;letter-spacing:-.02em;max-width:620px}
+.shero h1 .o{color:#F96232}
+.shero .sub{color:#eae4dd;font-size:20px;line-height:1.55;margin:20px 0 30px;max-width:540px}
+.herocta{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.gcert{width:78px;height:78px;display:block;background:#fff;border-radius:50%;box-shadow:0 12px 28px -14px rgba(0,0,0,.6)}
+
+/* Cards "o que fazemos" */
+.adgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
+.adcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:38px 36px;box-shadow:var(--sh);transition:.18s}
+.adcard:hover{border-color:rgba(249,98,50,.5);transform:translateY(-3px)}
+.adcard img{width:56px;height:56px;display:block;margin-bottom:20px}
+.adcard h3{font-size:23px;font-weight:800;margin-bottom:11px;letter-spacing:-.01em}
+.adcard h3 .tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--orange);padding:3px 8px;border-radius:6px;margin-left:8px;vertical-align:middle}
+.adcard p{font-size:17px;color:var(--muted);line-height:1.55}
+
+/* Lista "como trabalhamos" */
+.inclui{display:grid;grid-template-columns:1fr 1fr;gap:2px 46px;margin-top:8px}
+.inclui .it{display:flex;gap:15px;align-items:flex-start;padding:19px 0;border-top:1px solid var(--line);font-size:18px;font-weight:600;line-height:1.4;color:var(--ink)}
+.inclui .it .chk{flex:none;width:26px;height:26px;border-radius:8px;background:rgba(249,98,50,.12);display:flex;align-items:center;justify-content:center;margin-top:2px}
+.inclui .it .chk svg{width:15px;height:15px;stroke:var(--orange);stroke-width:3;fill:none}
+
+@media(max-width:900px){
+ .sheroin{padding:52px 24px}
+ .shero h1{font-size:33px}
+ .adgrid,.inclui{grid-template-columns:1fr}
+}
