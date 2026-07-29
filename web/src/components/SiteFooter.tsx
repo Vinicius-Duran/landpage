@@ -1,8 +1,8 @@
-import Brand from "./Brand";
+import { Link } from "react-router-dom";
 import { EMAIL, INSTAGRAM } from "../constants";
+import Brand from "./Brand";
 
 type Props = {
-  /** Só a home mostra o link de WhatsApp e "Cases" no footer. */
   variant?: "home" | "inner";
   whatsappHref?: string;
 };
@@ -12,11 +12,11 @@ export default function SiteFooter({ variant = "inner", whatsappHref }: Props) {
   return (
     <footer>
       <div className="wrap">
-        <Brand href={isHome ? "#" : "index.html"} />
+        <Brand href={isHome ? "#" : "/"} />
         <nav className="fl">
-          <a href={isHome ? "#servicos" : "index.html#servicos"}>Serviços</a>
+          <a href={isHome ? "#servicos" : "/#servicos"}>Serviços</a>
           {isHome && <a href="#cases">Cases</a>}
-          <a href="sobre.html">Sobre</a>
+          <Link to="/sobre">Sobre</Link>
           {isHome && whatsappHref && (
             <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
               WhatsApp

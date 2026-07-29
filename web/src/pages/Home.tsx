@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
 import { EMAIL, WA_DIAGNOSTICO, WA_VENDER_MAIS } from "../constants";
@@ -24,31 +25,31 @@ const SERVICES = [
     icon: "/img/icon-trafego.png",
     title: "Tráfego pago",
     text: "Google Ads, Meta Ads e Google Shopping com estratégia, catálogo otimizado e foco em ROAS. Anúncio que vira venda, não só clique.",
-    href: "servico-trafego-pago.html",
+    href: "/servico-trafego-pago",
   },
   {
     icon: "/img/icon-email.png",
     title: "E-mail marketing",
     text: "Fluxos automáticos de carrinho abandonado, reativação e recompra. Sua loja vendendo no automático, 24h por dia.",
-    href: "servico-email-marketing.html",
+    href: "/servico-email-marketing",
   },
   {
     icon: "/img/icon-loja.png",
     title: "Loja virtual & sites",
     text: "Criação de e-commerce do zero: estrutura, layout, cadastro e SEO desde o primeiro dia. Loja feita pra converter.",
-    href: "servico-loja-virtual.html",
+    href: "/servico-loja-virtual",
   },
   {
     icon: "/img/icon-seo.png",
     title: "SEO & otimização",
     text: "Sua loja achada por quem já quer comprar. Produtos e estrutura otimizados pra aparecer no Google de forma orgânica.",
-    href: "servico-seo.html",
+    href: "/servico-seo",
   },
   {
     icon: "/img/icon-social.png",
     title: "Mídia social",
     text: "Conteúdo no padrão da marca que engaja e transforma seguidor em cliente. Presença consistente que sustenta a venda.",
-    href: "servico-midia-social.html",
+    href: "/servico-midia-social",
   },
 ];
 
@@ -240,9 +241,9 @@ export default function Home() {
                   <img className="svcico" alt="" loading="lazy" src={s.icon} />
                   <h3>{s.title}</h3>
                   <p>{s.text}</p>
-                  <a href={s.href} className="svc-link">
+                  <Link to={s.href} className="svc-link">
                     Ver página ›
-                  </a>
+                  </Link>
                 </div>
               ))}
               <div className="svc svc-all">

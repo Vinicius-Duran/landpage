@@ -57,7 +57,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
         <section className="shero" style={{ backgroundImage: hero.background }}>
           <div className="wrap sheroin">
             <div className="hcopy">
-              <a className="back" href="index.html#servicos">
+              <a className="back" href="/#servicos">
                 ‹ Todos os serviços
               </a>
               <p className="ey">{hero.eyebrow}</p>
