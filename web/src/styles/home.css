@@ -103,13 +103,15 @@
 
 @media(max-width:900px){
  .heroin{padding:60px 24px}
- .herobg h1{font-size:38px}
- .benefits .wrap{grid-template-columns:1fr 1fr;gap:22px}
+ .herobg h1{font-size:30px;line-height:1.1}
+ .benefits .wrap{grid-template-columns:1fr 1fr;gap:16px;padding:28px 24px}
  .pains,.svc-grid,.tst-grid{grid-template-columns:1fr!important}
  .rgrid{grid-template-columns:1fr}
- .minicase{grid-template-columns:1fr;gap:24px;padding:32px}
+ .minicase{grid-template-columns:1fr;gap:24px;padding:28px 24px}
+ .minicase .mc-h{font-size:24px}
  .svcover .svc::after{display:none}
  .dctain{grid-template-columns:1fr;gap:32px;padding:54px 24px}
  .darkcta h2{font-size:30px}
  .about .wrap{grid-template-columns:1fr;gap:30px}
+ .final h2{font-size:34px}
 }
